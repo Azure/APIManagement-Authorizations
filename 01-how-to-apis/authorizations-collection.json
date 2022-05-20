@@ -351,7 +351,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"postLoginRedirectUrl\": \"[YOUR REDIRECT URL]\"\r\n}",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1311,7 +1311,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"postLoginRedirectUrl\": \"[YOUR REDIRECT URL]\"\r\n}",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1817,7 +1817,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"postLoginRedirectUrl\": \"[YOUR REDIRECT URL]\"\r\n}",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2323,7 +2323,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"postLoginRedirectUrl\": \"[YOUR REDIRECT URL]\"\r\n}",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2829,7 +2829,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"postLoginRedirectUrl\": \"[YOUR REDIRECT URL]\"\r\n}",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3335,7 +3335,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"postLoginRedirectUrl\": \"[YOUR REDIRECT URL]\"\r\n}",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3841,7 +3841,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"postLoginRedirectUrl\": \"[YOUR REDIRECT URL]\"\r\n}",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
