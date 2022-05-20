@@ -21,6 +21,9 @@ module apim 'apim.bicep' = {
 module google 'google.bicep' = {
   name: 'google'
   scope: resourcegroup
+  dependsOn: [
+    apim
+  ]
   params: {
     apim_name: apim_name
   }
@@ -29,6 +32,9 @@ module google 'google.bicep' = {
 module dropbox 'dropbox.bicep' = {
   name: 'dropbox'
   scope: resourcegroup
+  dependsOn: [
+    apim
+  ]
   params: {
     apim_name: apim_name
   }
@@ -37,6 +43,9 @@ module dropbox 'dropbox.bicep' = {
 module github 'github.bicep' = {
   name: 'github'
   scope: resourcegroup
+  dependsOn: [
+    apim
+  ]
   params: {
     apim_name: apim_name
   }
@@ -46,6 +55,9 @@ module github 'github.bicep' = {
 module linkedin 'linkedin.bicep' = {
   name: 'linkedin'
   scope: resourcegroup
+  dependsOn: [
+    apim
+  ]
   params: {
     apim_name: apim_name
   }
@@ -54,6 +66,9 @@ module linkedin 'linkedin.bicep' = {
 module spotify 'spotify.bicep' = {
   name: 'spotify'
   scope: resourcegroup
+  dependsOn: [
+    apim
+  ]
   params: {
     apim_name: apim_name
   }
@@ -62,6 +77,9 @@ module spotify 'spotify.bicep' = {
 module aad 'aad.bicep' = {
   name: 'aad'
   scope: resourcegroup
+  dependsOn: [
+    apim
+  ]
   params: {
     apim_name: apim_name
   }
@@ -70,6 +88,9 @@ module aad 'aad.bicep' = {
 module aad_cc 'aad-cc.bicep' = {
   name: 'aad-cc'
   scope: resourcegroup
+  dependsOn: [
+    apim
+  ]
   params: {
     apim_name: apim_name
   }
@@ -78,6 +99,9 @@ module aad_cc 'aad-cc.bicep' = {
 module oauth2 'oauth2.bicep' = {
   name: 'oauth2'
   scope: resourcegroup
+  dependsOn: [
+    apim
+  ]
   params: {
     apim_name: apim_name
   }

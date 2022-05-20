@@ -3,7 +3,7 @@
 This samples shows how to use the management APIs related to API Management Authorizations feature.
 It covers six identity providers and the generic provider that can be used for all identity providers that supports the OAuth2.0 standard using authorization code grant.
 
-For each provider an application needs to be created.  
+For each provider an application needs to be created with a redirecturl in this format `https://authorization-manager.consent.azure-apim.net/redirect/apim/[APIM_SERVICENAME]`.  
 
 The first part sets up API Management using Azure CLI/Bicep and create one API with two operations for each provider.
 The second part uses Postman and the management APIs to configure authorizations for each provider.
@@ -29,7 +29,7 @@ az account show
 ```
 2. Navigate to the "01-how-to-apis" folder and run
 ```bash
-az deployment sub create -l [AZURE_REGION] -f main.bicep -p apim_name=[APIM_SERVICENAME] rg_name=[RESOURCEGROUP_NAME] location=[AZURE_REGION]
+az deployment sub create -l [AZURE_REGION] -n apimdeployment -f main.bicep -p apim_name=[APIM_SERVICENAME] rg_name=[RESOURCEGROUP_NAME] location=[AZURE_REGION]
 ```
 This will create the API Management instance and APIs.
 
@@ -143,7 +143,7 @@ Navigate to the request Authorizations --> Management --> IdentityProvider --> L
 
 ![p-auth-run.png](p-auth-run.png)
  
-This will send all requests in the folder and create 
+This will send all requests in the folder and create: 
     - authorization provider
     - authorization
     - access policy for managed system identity 
