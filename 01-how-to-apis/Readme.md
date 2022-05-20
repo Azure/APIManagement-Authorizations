@@ -31,7 +31,7 @@ az account show
 ```bash
 az deployment sub create -l [AZURE_REGION] -n apimdeployment -f main.bicep -p apim_name=[APIM_SERVICENAME] rg_name=[RESOURCEGROUP_NAME] location=[AZURE_REGION]
 ```
-This will create the API Management instance and APIs.
+This will create the API Management instance and APIs. 
 
   
 #### Step 2 - Configure Postman variables
