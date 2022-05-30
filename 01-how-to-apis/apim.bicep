@@ -3,12 +3,12 @@ param location string = resourceGroup().location
 
 
 // APIM instance
-resource apim 'Microsoft.ApiManagement/service@2021-08-01' = {
+resource apim 'Microsoft.ApiManagement/service@2021-12-01-preview' = {
   name: apim_name
   location: location
   sku: {
-    name: 'Consumption'
-    capacity: 0
+    name: 'Developer'
+    capacity: 1
   }
   properties: {
     publisherName: 'John Doe'

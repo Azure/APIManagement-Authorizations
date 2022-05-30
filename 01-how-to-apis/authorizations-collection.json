@@ -4735,7 +4735,7 @@
 									],
 									"path": [
 										"spotify",
-										"token"
+										"data"
 									]
 								}
 							},
@@ -4789,7 +4789,7 @@
 									],
 									"path": [
 										"spotify",
-										"data"
+										"token"
 									]
 								}
 							},

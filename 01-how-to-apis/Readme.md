@@ -1,26 +1,26 @@
 ## 01-how-to-apis
 
-This samples shows how to use the management APIs related to API Management Authorizations feature.
-It covers six identity providers and the generic provider that can be used for all identity providers that supports the OAuth2.0 standard using authorization code grant.
+This samples shows how to use the Azure REST APIs related to API Management Authorizations feature.
+It covers six identity providers and the generic provider that can be used for all identity providers that supports the OAuth 2.0 standard using authorization code grant.
 
-For each provider an application needs to be created with a redirecturl in this format `https://authorization-manager.consent.azure-apim.net/redirect/apim/[APIM_SERVICENAME]`.  
+For each provider an application needs to be created with a redirect url in this format `https://authorization-manager.consent.azure-apim.net/redirect/apim/[APIM_SERVICENAME]`.  
 
-The first part sets up API Management using Azure CLI/Bicep and create one API with two operations for each provider.
-The second part uses Postman and the management APIs to configure authorizations for each provider.
+The first part sets up API Management using Azure CLI/Bicep and create one API with two operations for each provider and policies to fetch tokens.
+The second part uses Postman and the Azure REST APIs to configure API Management Authorizations for each provider.
 
 In the Postman collection provided in this sample there is a folder called "Runtime", it consists of requests that can be used to test this feature after it has been setup.
 
-For public preview there are no API documentation so in this sample there is a Postman collection to be used.
+For public preview of the Authorizations feature there are no API documentation. This sample consists of a Postman collection (authorizations-collection.json) and a Postman environment (authorizations-environment.json) to be imported.
 These APIs might change before this feature becomes General Available.
 
-The sample will create an API Management instance using the Consumption sku.
+The sample will create a resource group and an API Management instance using the Developer SKU.
 
 #### Requirements
 - RBAC Contributor role in subscription. 
 - Postman
-- For each provider to be used an application needs to be created.
+- For each identity provider to be used an application needs to be created which is not covered in this sample.
 
-#### Step 1 - Create APIM instance and APIs
+#### Step 1 - Create an API Management instance and APIs
 
 1. Login to Azure and make sure it's the right subscription.
 ```bash
@@ -41,7 +41,7 @@ This will create the API Management instance and APIs.
 1. Open the environment "Authorizations" in Postman.
 1. Configure the variables.
 
-There are variables for API Management and then there are variables for each identity provider. The API Management variables are mandatory, only the variables for the providers to be used must be set. 
+There are variables for API Management and then there are variables for each identity provider. The API Management variables are mandatory, only the variables for the identity providers to be used must be set.
 
 
 | Name | Type | Description | Default |
@@ -52,13 +52,14 @@ There are variables for API Management and then there are variables for each ide
 | apimServiceName | APIM | API Manangement name  | |
 | apimApiVersion | APIM | API version  | 2021-12-01-preview |
 | tenantId | APIM | TenantId in which the API Manangement instance resides. `az account get-access-token --query tenant -o tsv`  |  |
-| msi | APIM | The managed system assigned identity of API Management. `az apim show -g rg-apimdev -n apim-authorizations-premium --query identity.principalId -o tsv`   | |
+| msi | APIM | The managed system assigned identity of API Management. `az apim show -g [resourceGroupName] -n [apimServiceName] --query identity.principalId -o tsv`   | |
 | oid | APIM | User objectId in AAD, this is used to configure access policy for the authorizations. `az ad signed-in-user show --query objectId -o tsv`  | |
 | authProviderId | APIM | Name of the authorization provider that will be created, a postman script sets the value for each provider. | |
 | authorizationId | APIM | Name of the authorization, this value is being referenced to in the policy used in API Management.  | auth-01 |
 | accessPolicyId | APIM | Name of access policy for the msi. | acp-01 |
 | accessPolicyId2 | APIM | Name of access policy for the oid.   | acp-02 |
 | apimSubscriptionkey | APIM | API Management subscription key to test the runtime requests.   |  |
+| user_token | APIM | This token is used to for the runtime tests and it's not mandatory to set. When running the "data-jwt" tests this token is attached as a header to the request. `az account get-access-token --resource  https://azure-api.net/authorization-manager --query accessToken -o tsv`     |  |
 
 ##### Configuration for AAD - Authorization code grant type
 
@@ -126,27 +127,40 @@ Any provider that supports OAuth 2.0 standard with authorization code grant type
 | oauth2AuthUrl | Generic | Url used for authorizationto refresh tokens. | |
 
 
-#### Step 3 Create authorizations in API Management.
+#### Step 3 - Create Authorizations in API Management
 
-Now it's time to create the authorization configurations in API Management using Postman. 
+Now it's time to create the authorization configurations in API Management using Postman.
+
+`Make sure the redirect url is configured for the application for each provider to be used. The redirect url should be https://authorization-manager.consent.azure-apim.net/redirect/apim/[APIM_SERVICENAME]`
 
 1. First validate that everything works by starting to list all identity providers.
-Choose the imported collection "Authorizations" and make sure the environment "AuthorizationsEnvironment" are chosen.
+Choose the imported collection "Authorizations" and make sure the environment "AuthorizationsEnvironment" are chosen in Postman.
 
-![p-auth.png](p-auth.png)
+    ![p-auth.png](p-auth.png)
 
-![p-auth.png](p-auth-env.png)
+    ![p-auth.png](p-auth-env.png)
 
-Navigate to the request Authorizations --> Management --> IdentityProvider --> LIST IdentityProviders and send it. The response should list all available identity providers.
+    Navigate to the request Authorizations --> Management --> IdentityProvider --> LIST IdentityProviders and send it. The response should list all available identity providers.
 
-2. Navigate to the folder with the provider to be setup and click on the "Run" button --> "Run Authorizations". 
+2. Under Authorizations --> Management, navigate to a folder where the Postman variables are set and click on the button "Run".
 
-![p-auth-run.png](p-auth-run.png)
- 
-This will send all requests in the folder and create: 
+    This will send all requests in the folder and create:
     - authorization provider
     - authorization
     - access policy for managed system identity 
     - access policy for the user with the "oid" objectid
 
-3. Before API Management can fetch tokens a consent is required (this is not the case if client credential grant type is used), this can be done through the Azure portal choosing "Login" in the context menu for the authorization or by sending the request "POST GetLoginLinks". The response contains a link that will start the consent flow. When the consent is done API Management can fetch tokens from the configured identity provider. 
+    ![p-auth-run.png](p-auth-run.png)
+
+3. Before API Management can fetch tokens a consent is required (this is not the case if client credential grant type is used), this can be done through the Azure portal choosing "Login" in the context menu for the authorization or by sending the request "POST GetLoginLinks" from Postman. The response contains a link that will start the consent flow. When the consent is done API Management can fetch tokens from the configured identity provider. 
+
+#### Step 4 - Test the APIs
+
+
+In the Postman collection there is a "Runtime" folder that contains a folder for each identity provider. In each folder there are three requests:
+- data - Sends a request to API Management, fetches the access token from the IDP and attaches an Authorization header to the backend service. The access policy that's being used is configured to use the Managed System Identity of API Management. 
+- data-jwt - Same as above, except that this request has an HTTP header with the {{user_token}} to be validated against an access policy. 
+- token - Sends a request to API Management, fetches the access token from the IDP and returns the token to the client. 
+ 
+     ![p-auth-test.png](p-auth-test.png)
+
