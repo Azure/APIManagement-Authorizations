@@ -15,7 +15,8 @@ API Management Authorizations feature simplify the process of managing access to
 By configuring any of the supported identity providers and create an authorization API Management can retrieve access tokens and refresh them when needed based on the expiry of the token lifetime. 
 The tokens retrieved can be attached as a header to a backend request in API Management or sent back to a client where the access token can be used.  
 
-### Scenarios
+### Identity providers
+
 The supported identity providers for public preview are: 
 - Azure Active Directory
 - Dropbox
@@ -28,6 +29,8 @@ The supported identity providers for public preview are:
 With the Generic OAuth 2.0 provider it’s possible to connect to any identity provider that supports authorization code and is following the OAuth 2.0 standard.
 
 This feature is supported for all API Management SKUs. 
+
+### Scenarios
 
 Here are some example scenarios where this feature could be used:
 - Citizen/low code developers using Power Apps or Power Automate can easily connect to SaaS providers that are using OAuth 2.0.
