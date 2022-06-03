@@ -1,0 +1,6173 @@
+{
+	"info": {
+		"_postman_id": "bf914b6f-c00a-47b0-9286-ee2cdd36ac46",
+		"name": "Authorizations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Management",
+			"item": [
+				{
+					"name": "IdentityProvider",
+					"item": [
+						{
+							"name": "LIST IdentityProviders",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationIdentityProviders?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationIdentityProviders"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET IdentityProvider",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationIdentityProviders/aad?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationIdentityProviders",
+										"aad"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "aad",
+					"item": [
+						{
+							"name": "PUT AuthorizationProvider",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"identityProvider\": \"aad\", \r\n        \"oauth2\": {\r\n            \"grantTypes\": {\r\n                \"authorizationCode\": {\r\n                    // Default Parameters\r\n                    \"clientId\": \"{{aadAuthAppClientId}}\",\r\n                    \"clientSecret\": \"{{aadAuthAppClientSecret}}\",\r\n                    \"scopes\": \"User.Read\",\r\n                    // Custom Parameters\r\n                    \"resourceUri\": \"https://graph.microsoft.com\",\r\n                    \"tenantId\": {{aadTenantId}}\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AuthorizationProvider",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Authorization",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"authorizationType\": \"oauth2\",\r\n        \"oauth2grantType\": \"authorizationCode\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Authorization",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST Authorizations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST GetLoginLinks",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/getLoginLinks?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"getLoginLinks"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - msi",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{msi}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - jwt",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{oid}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId2}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId2}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AccessPolicy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST AccessPolicys",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"aad-01\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "aad-cc",
+					"item": [
+						{
+							"name": "PUT AuthorizationProvider",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"identityProvider\": \"aad\", \r\n        \"oauth2\": {\r\n            \"grantTypes\": {\r\n                \"clientCredentials\": {\r\n                    // Custom Parameters\r\n                    \"resourceUri\": \"https://graph.microsoft.com\",\r\n                    \"tenantId\": \"{{cc-aadTenantId}}\"\r\n\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AuthorizationProvider",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Authorization",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"authorizationType\": \"oauth2\",\r\n        \"oauth2grantType\": \"clientCredentials\",\r\n        \"parameters\": {\r\n            \"clientId\": \"{{cc-aadAuthAppClientId}}\",\r\n            \"clientSecret\": \"{{cc-aadAuthAppClientSecret}}\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Authorization",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST Authorizations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - msi",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{msi}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - jwt",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{oid}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId2}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId2}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AccessPolicy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST AccessPolicys",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"aad-02-cc\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "github",
+					"item": [
+						{
+							"name": "PUT AuthorizationProvider",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"identityProvider\": \"github\", \r\n        \"oauth2\": {\r\n            \"grantTypes\": {\r\n                \"authorizationCode\": {\r\n                    // Default Parameters\r\n                    \"clientId\": \"{{githubOAuthAppClientId}}\",\r\n                    \"clientSecret\": \"{{githubOAuthAppClientSecret}}\",\r\n                    \"scopes\": \"User\"\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AuthorizationProvider",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Authorization",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"authorizationType\": \"oauth2\",\r\n        \"oauth2grantType\": \"authorizationCode\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Authorization",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST Authorizations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST GetLoginLinks",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/getLoginLinks?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"getLoginLinks"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - msi",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{msi}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - jwt",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{oid}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId2}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId2}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AccessPolicy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST AccessPolicys",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"github-01\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "google",
+					"item": [
+						{
+							"name": "PUT AuthorizationProvider",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"identityProvider\": \"google\", \r\n        \"oauth2\": {\r\n            \"grantTypes\": {\r\n                \"authorizationCode\": {\r\n                    // Default Parameters\r\n                    \"clientId\": \"{{googleOAuthAppClientId}}\",\r\n                    \"clientSecret\": \"{{googleOAuthAppClientSecret}}\",\r\n                    \"scopes\": \"https://www.googleapis.com/auth/userinfo.profile\"\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AuthorizationProvider",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Authorization",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"authorizationType\": \"oauth2\",\r\n        \"oauth2grantType\": \"authorizationCode\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Authorization",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST Authorizations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST GetLoginLinks",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/getLoginLinks?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"getLoginLinks"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - msi",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{msi}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - jwt",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{oid}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId2}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId2}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AccessPolicy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST AccessPolicys",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"google-01\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "oauth2",
+					"item": [
+						{
+							"name": "PUT AuthorizationProvider",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"identityProvider\": \"oauth2\", \r\n        \"oauth2\": {\r\n            \"grantTypes\": {\r\n                \"authorizationCode\": {\r\n                    // Default Parameters\r\n                    \"clientId\": \"{{oauth2OAuthAppClientId}}\",\r\n                    \"clientSecret\": \"{{oauth2OAuthAppClientSecret}}\",\r\n                    \"scopes\": \"{{oauth2Scopes}}\",\r\n                    \"authorizationUrl\":\"{{oauth2AuthUrl}}\",\r\n                    \"tokenUrl\":\"{{oauth2TokenUrl}}\", \r\n                    \"refreshUrl\":\"{{oauth2RefreshUrl}}\"\r\n\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AuthorizationProvider",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Authorization",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"authorizationType\": \"oauth2\",\r\n        \"oauth2grantType\": \"authorizationCode\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Authorization",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST Authorizations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST GetLoginLinks",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/getLoginLinks?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"getLoginLinks"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - msi",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{msi}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - jwt",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{oid}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId2}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId2}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AccessPolicy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST AccessPolicys",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"oauth2-01\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "spotify",
+					"item": [
+						{
+							"name": "PUT AuthorizationProvider",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"identityProvider\": \"spotify\", \r\n        \"oauth2\": {\r\n            \"grantTypes\": {\r\n                \"authorizationCode\": {\r\n                    // Default Parameters\r\n                    \"clientId\": \"{{spotifyOAuthAppClientId}}\",\r\n                    \"clientSecret\": \"{{spotifyOAuthAppClientSecret}}\",\r\n                    \"scopes\": \"\"\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AuthorizationProvider",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Authorization",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"authorizationType\": \"oauth2\",\r\n        \"oauth2grantType\": \"authorizationCode\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Authorization",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST Authorizations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST GetLoginLinks",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/getLoginLinks?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"getLoginLinks"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - msi",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{msi}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - jwt",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{oid}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId2}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId2}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AccessPolicy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST AccessPolicys",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"spotify-01\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "linkedin",
+					"item": [
+						{
+							"name": "PUT AuthorizationProvider",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"identityProvider\": \"linkedin\", \r\n        \"oauth2\": {\r\n            \"grantTypes\": {\r\n                \"authorizationCode\": {\r\n                    // Default Parameters\r\n                    \"clientId\": \"{{linkedinOAuthAppClientId}}\",\r\n                    \"clientSecret\": \"{{linkedinOAuthAppClientSecret}}\",\r\n                    \"scopes\": \"r_liteprofile\"\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AuthorizationProvider",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Authorization",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"authorizationType\": \"oauth2\",\r\n        \"oauth2grantType\": \"authorizationCode\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Authorization",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST Authorizations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST GetLoginLinks",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/getLoginLinks?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"getLoginLinks"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - msi",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{msi}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - jwt",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{oid}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId2}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId2}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AccessPolicy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST AccessPolicys",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"linkedin-01\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "dropbox",
+					"item": [
+						{
+							"name": "PUT AuthorizationProvider",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"identityProvider\": \"dropbox\", \r\n        \"oauth2\": {\r\n            \"grantTypes\": {\r\n                \"authorizationCode\": {\r\n                    // Default Parameters\r\n                    \"clientId\": \"{{dropboxOAuthAppClientId}}\",\r\n                    \"clientSecret\": \"{{dropboxOAuthAppClientSecret}}\",\r\n                    \"scopes\": \"account_info.read\"\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AuthorizationProvider",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Authorization",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"authorizationType\": \"oauth2\",\r\n        \"oauth2grantType\": \"authorizationCode\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Authorization",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST Authorizations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST GetLoginLinks",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"postLoginRedirectUrl\": \"https://www.bing.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/getLoginLinks?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"getLoginLinks"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - msi",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{msi}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT AccessPolicy - jwt",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"properties\": {\r\n        \"objectid\": \"{{oid}}\",\r\n        \"tenantid\": \"{{tenantId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId2}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId2}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET AccessPolicy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST AccessPolicys",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"dropbox-01\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Runtime",
+			"item": [
+				{
+					"name": "aad",
+					"item": [
+						{
+							"name": "data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/aad/data",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"aad",
+										"data"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "data-jwt",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{user_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/aad/data?idtype=jwt",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"aad",
+										"data"
+									],
+									"query": [
+										{
+											"key": "idtype",
+											"value": "jwt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/aad/token",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"aad",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "aad-cc",
+					"item": [
+						{
+							"name": "data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/aad-cc/data?objectid={{cc-aadobjectId}}",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"aad-cc",
+										"data"
+									],
+									"query": [
+										{
+											"key": "objectid",
+											"value": "{{cc-aadobjectId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "data-jwt",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{user_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/aad-cc/data?idtype=jwt&objectid={{cc-aadobjectId}}",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"aad-cc",
+										"data"
+									],
+									"query": [
+										{
+											"key": "idtype",
+											"value": "jwt"
+										},
+										{
+											"key": "objectid",
+											"value": "{{cc-aadobjectId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/aad-cc/token",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"aad-cc",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "dropbox",
+					"item": [
+						{
+							"name": "data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/dropbox/data",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"dropbox",
+										"data"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "data-jwt",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{user_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/dropbox/data?idtype=jwt",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"dropbox",
+										"data"
+									],
+									"query": [
+										{
+											"key": "idtype",
+											"value": "jwt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/dropbox/token",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"dropbox",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "github",
+					"item": [
+						{
+							"name": "data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/github/data?username={{githubusername}}",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"github",
+										"data"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "{{githubusername}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "data-jwt",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{user_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/github/data?idtype=jwt&username={{githubusername}}",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"github",
+										"data"
+									],
+									"query": [
+										{
+											"key": "idtype",
+											"value": "jwt"
+										},
+										{
+											"key": "username",
+											"value": "{{githubusername}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/github/token",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"github",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "google",
+					"item": [
+						{
+							"name": "data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/google/data",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"google",
+										"data"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "data-jwt",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{user_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/google/data?idtype=jwt",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"google",
+										"data"
+									],
+									"query": [
+										{
+											"key": "idtype",
+											"value": "jwt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/google/token",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"google",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "linkedin",
+					"item": [
+						{
+							"name": "data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/linkedin/data",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"linkedin",
+										"data"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "data-jwt",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{user_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/linkedin/data?idtype=jwt",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"linkedin",
+										"data"
+									],
+									"query": [
+										{
+											"key": "idtype",
+											"value": "jwt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/linkedin/token",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"linkedin",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "oauth2",
+					"item": [
+						{
+							"name": "data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/oauth2/data",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"oauth2",
+										"data"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "data-jwt",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{user_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/oauth2/data?idtype=jwt",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"oauth2",
+										"data"
+									],
+									"query": [
+										{
+											"key": "idtype",
+											"value": "jwt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/oauth2/token",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "spotify",
+					"item": [
+						{
+							"name": "data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/spotify/token",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"spotify",
+										"data"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "data-jwt",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{user_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/spotify/data?idtype=jwt",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"spotify",
+										"data"
+									],
+									"query": [
+										{
+											"key": "idtype",
+											"value": "jwt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{apimServiceName}}.azure-api.net/spotify/data",
+									"protocol": "https",
+									"host": [
+										"{{apimServiceName}}",
+										"azure-api",
+										"net"
+									],
+									"path": [
+										"spotify",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "{{apimSubscriptionkey}}",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "Ocp-Apim-Subscription-Key",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Management-delete",
+			"item": [
+				{
+					"name": "aad",
+					"item": [
+						{
+							"name": "DELETE AuthorizationProvider",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Authorization",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE AccessPolicy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"aad-01\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "aad-cc",
+					"item": [
+						{
+							"name": "DELETE AuthorizationProvider",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Authorization",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE AccessPolicy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"aad-02-cc\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "github",
+					"item": [
+						{
+							"name": "DELETE AuthorizationProvider",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Authorization",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE AccessPolicy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"github-01\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "google",
+					"item": [
+						{
+							"name": "DELETE AuthorizationProvider",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Authorization",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE AccessPolicy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"google-01\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "oauth2",
+					"item": [
+						{
+							"name": "DELETE AuthorizationProvider",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Authorization",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE AccessPolicy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"oauth2-01\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "spotify",
+					"item": [
+						{
+							"name": "DELETE AuthorizationProvider",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Authorization",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE AccessPolicy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"spotify-01\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "linkedin",
+					"item": [
+						{
+							"name": "DELETE AuthorizationProvider",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Authorization",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE AccessPolicy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"linkedin-01\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "dropbox",
+					"item": [
+						{
+							"name": "DELETE AuthorizationProvider",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Authorization",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE AccessPolicy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{apimServiceName}}/authorizationProviders/{{authProviderId}}/authorizations/{{authorizationId}}/accessPolicies/{{accessPolicyId}}?api-version=2021-12-01-preview",
+									"protocol": "https",
+									"host": [
+										"management",
+										"azure",
+										"com"
+									],
+									"path": [
+										"subscriptions",
+										"{{subscriptionId}}",
+										"resourceGroups",
+										"{{resourceGroupName}}",
+										"providers",
+										"Microsoft.ApiManagement",
+										"service",
+										"{{apimServiceName}}",
+										"authorizationProviders",
+										"{{authProviderId}}",
+										"authorizations",
+										"{{authorizationId}}",
+										"accessPolicies",
+										"{{accessPolicyId}}"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "2021-12-01-preview"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.variables.set(\"authProviderId\", \"dropbox-01\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
