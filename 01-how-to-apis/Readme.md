@@ -6,16 +6,22 @@ It covers six identity providers and the generic provider that can be used for a
 For each provider an application needs to be created with a redirect url in this format `https://authorization-manager.consent.azure-apim.net/redirect/apim/[APIM_SERVICENAME]`.  
 
 The first part sets up API Management using Azure CLI/Bicep and create one API with two operations for each provider and policies to fetch tokens.
+
 The second part uses Postman and the Azure REST APIs to configure API Management Authorizations for each provider.
 
 In the Postman collection provided in this sample there is a folder called "Runtime", it consists of requests that can be used to test this feature after it has been setup.
 
-For public preview of the Authorizations feature there are no API documentation. This sample consists of a Postman collection (authorizations-collection.json) and a Postman environment (authorizations-environment.json) to be imported.
-These APIs might change before this feature becomes General Available.
+For public preview of the Authorizations feature there is no Azure REST API documentation. 
+
+This sample consists of a Postman collection (authorizations-collection.json) and a Postman environment (authorizations-environment.json) to be imported.
+These APIs might change before this feature becomes General Available (GA).
 
 The sample will create a resource group and an API Management instance using the Developer SKU.
 
+For more information, visit the official [documentation](https://docs.microsoft.com/en-gb/azure/api-management/authorizations-overview) for this feature.
+
 #### Requirements
+- Azure CLI
 - RBAC Contributor role in subscription. 
 - Postman
 - For each identity provider to be used an application needs to be created which is not covered in this sample.
@@ -131,7 +137,7 @@ Any provider that supports OAuth 2.0 standard with authorization code grant type
 
 Now it's time to create the authorization configurations in API Management using Postman.
 
-`Make sure the redirect url is configured for the application for each provider to be used. The redirect url should be https://authorization-manager.consent.azure-apim.net/redirect/apim/[APIM_SERVICENAME]`
+**Make sure the redirect url is configured for the application for each provider to be used. The redirect url should be https://authorization-manager.consent.azure-apim.net/redirect/apim/[APIM_SERVICENAME]**
 
 1. First validate that everything works by starting to list all identity providers.
 Choose the imported collection "Authorizations" and make sure the environment "AuthorizationsEnvironment" are chosen in Postman.

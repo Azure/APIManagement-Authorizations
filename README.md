@@ -1,33 +1,40 @@
-# Project
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+# Azure API Management Authorizations (preview)
 
-As the maintainer of this project, please make a few updates:
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+This repository consists of samples of how to use the Azure API Management Authorizations feature. 
+To get more information please visit the official Azure documentation [here](https://docs.microsoft.com/en-gb/azure/api-management/authorizations-overview). 
 
-## Contributing
+![Overview of Authorizations](overview.png) 
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+### Overview 
+API Management Authorizations feature simplify the process of managing access tokens when sending requests to APIs secured by an OAuth 2.0 authorization scheme.
 
-## Trademarks
+By configuring any of the supported identity providers and create an authorization API Management can retrieve access tokens and refresh them when needed based on the expiry of the token lifetime. 
+The tokens retrieved can be attached as a header to a backend request in API Management or sent back to a client where the access token can be used.  
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+### Scenarios
+The supported identity providers for public preview are: 
+- Azure Active Directory
+- Dropbox
+- GitHub
+- Google
+- LinkedIn
+- Spotify
+- Generic OAuth 2.0 provider
+ 
+With the Generic OAuth 2.0 provider it’s possible to connect to any identity provider that supports authorization code and is following the OAuth 2.0 standard.
+
+This feature is supported for all API Management SKUs. 
+
+Here are some example scenarios where this feature could be used:
+- Citizen/low code developers using Power Apps or Power Automate can easily connect to SaaS providers that are using OAuth 2.0.
+- Unattended scenarios such as an Azure function using a Timer trigger can utilize this feature to connect to a backend API using OAuth 2.0.
+- A marketing team on an enterprise company could use the same authorization for interacting with a social media platform using OAuth 2.0.
+- Exposing APIs in API Management as a Logic Apps Custom Connector in Logic Apps where the backend service requires OAuth 2.0 flow.
+- On behalf of scenario where a service such as Dropbox can be used by multiple users.
+- Connect to different services that requires authorization OAuth 2.0 using GraphQL Federation in API Management.
+- Enterprise Application Integration (EAI) patterns using service-to-service authorization can use client credentials grant type against backend APIs that are using OAuth 2.0.
+- SPA applications that only want to retrieve an access token to be used in a client SDKs against an API using OAuth 2.0.
