@@ -5,9 +5,9 @@
 This repository consists of samples of how to use the Azure API Management Authorizations feature. 
 To get more information please visit the official Azure documentation [here](https://docs.microsoft.com/en-gb/azure/api-management/authorizations-overview). 
 
-![Overview of Authorizations](overview.png) 
-
-
+<p align="center">
+  <img src="overview.png" />
+</p>
 
 ### Overview 
 API Management Authorizations feature simplify the process of managing access tokens when sending requests to APIs secured by an OAuth 2.0 authorization scheme.
