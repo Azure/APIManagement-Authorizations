@@ -8,7 +8,7 @@ using GraphQL.Client.Serializer.Newtonsoft;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace MyAmbassadorDemo.Function
+namespace APIMAuthorizationsDemo.Function
 {
     internal class ApimService
     {
