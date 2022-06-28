@@ -7,7 +7,7 @@
 | GitHub                    | `github`     | https://docs.github.com/en/developers                                 |
 | Google                    | `google`     | https://console.developers.google.com/apis/dashboard                  |
 | LinkedIn                  | `linkedin`   | https://www.linkedin.com/developers                                   |
-| ServiceNow                | `servicenow` | https://developer.servicenow.com/dev.do                               | Must use instance that does not hibernate(https://developer.servicenow.com/blog.do?p=/post/hibernation-and-developer-instances/)    |
+| ServiceNow                | `servicenow` | https://developer.servicenow.com/dev.do                               | Must use instance that does not hibernate. See [this doc](https://developer.servicenow.com/blog.do?p=/post/hibernation-and-developer-instances/) for more detail   |
 | Spotify                   | `spotify`    | https://developer.spotify.com                                         |
 | Stripe                    | `stripe`     | https://stripe.com/docs/development                                   |
 | Twitter                   | `twitter`    | https://developer.twitter.com/en                                      | Uses PKCE authentication flow                                                                                                       |
