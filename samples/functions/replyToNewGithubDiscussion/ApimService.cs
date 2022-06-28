@@ -39,32 +39,16 @@ namespace APIMAuthorizationsDemo.Function
             return content;
         }
 
-        public async Task<GithubDiscussionComment[]> ListDiscussionCommentsAsync() 
+        public async Task<(string, GithubDiscussionComment[])> ListDiscussionCommentsAsync(
+            string githubRepoName, string githubRepoOwner, int githubDiscussionNumber) 
         {
             var request = new GraphQLRequest() {
-                Query = @"
-query {
-	repository(name: ""APIM-Ambassador-demo"", owner: ""APIManagementAuthorizations"") {
-		discussion(number: 1) {
-			comments(last: 100) {
-				nodes {
-					author {
-						login
-					}
-					body
-					createdAt
-					id
-					url
-				}
-			}
-		}
-	}
-}
-"
+                Query = $"query {{ repository(name: \"{githubRepoName}\", owner: \"{githubRepoOwner}\" ) {{ discussion(number: {githubDiscussionNumber}) {{ id, comments(last: 100) {{ nodes {{ author {{ login }} body, createdAt, id, url }} }} }} }} }}"
             };
             var response = await _graphQLClientForGithubEndpoints.SendQueryAsync<JObject>(request);
+            var id = (string)(response.Data["repository"]["discussion"]["id"]);
             var comments = response.Data["repository"]["discussion"]["comments"]["nodes"].ToObject<GithubDiscussionComment[]>();
-            return comments;
+            return (id, comments);
         }
 
         public async Task<bool> ReplyToDiscussionCommentAsync(
@@ -75,7 +59,7 @@ query {
                 Query = query
             };
             var response = await _graphQLClientForGithubEndpoints.SendQueryAsync<JObject>(request);
-            return true;
+            return response.Errors == null;
         }
     }
 }

@@ -5,22 +5,28 @@ using System.Threading.Tasks;
 namespace APIMAuthorizationsDemo.Function
 {
   public class ReplyToNewGithubDiscussion {
-    private const string APIM_SERVICE_NAME = "{APIM_SERVICE_NAME}";
-    private const string SUBSCRIPTION_KEY = "{SUBSCRIPTION_KEY}";
-    private const string DISCUSSION_ID = "{DISCUSSION_ID}";
 
     private ApimService _apimService;
+    private string _githubRepoName;
+    private string _githubRepoOwner;
+    private int _githubDiscussionNumber;
 
     public ReplyToNewGithubDiscussion() {
-      _apimService = new ApimService($"https://{APIM_SERVICE_NAME}.azure-api.net", $"{SUBSCRIPTION_KEY}");
+      var apimServiceName = System.Environment.GetEnvironmentVariable("APIM_SERVICE_NAME", EnvironmentVariableTarget.Process);
+      var subscriptionKey = System.Environment.GetEnvironmentVariable("SUBSCRIPTION_KEY", EnvironmentVariableTarget.Process);
+      _apimService = new ApimService($"https://{apimServiceName}.azure-api.net", $"{subscriptionKey}");
+
+      _githubRepoName = System.Environment.GetEnvironmentVariable("GITHUB_REPO_NAME", EnvironmentVariableTarget.Process);
+      _githubRepoOwner = System.Environment.GetEnvironmentVariable("GITHUB_REPO_OWNER", EnvironmentVariableTarget.Process);
+      _githubDiscussionNumber = Int32.Parse(System.Environment.GetEnvironmentVariable("GITHUB_DISCUSSION_NUMBER", EnvironmentVariableTarget.Process));
     }
 
     public async Task RunAsync() {
-      var comments = await _apimService.ListDiscussionCommentsAsync();
-      var newComments = comments.Where(c => c.CreatedAt > DateTimeOffset.UtcNow.AddSeconds(-12)).ToArray();
+      (string githubDiscussionId, GithubDiscussionComment[] comments) = await _apimService.ListDiscussionCommentsAsync(_githubRepoName, _githubRepoOwner, _githubDiscussionNumber);
+      var newComments = comments.Where(c => c.CreatedAt > DateTimeOffset.UtcNow.AddSeconds(-62)).ToArray();
       foreach (var comment in newComments) {
         var body = $"[Automated Reply using [APIM Authorizations](https://github.com/Azure/APIManagement-Authorizations)🗝️] Thank you for giving feedback, {comment.Author.Login}!";
-        var result = await _apimService.ReplyToDiscussionCommentAsync(DISCUSSION_ID, comment.Id, body);
+        var result = await _apimService.ReplyToDiscussionCommentAsync(githubDiscussionId, comment.Id, body);
       }
     }
   }

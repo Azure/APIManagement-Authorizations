@@ -8,7 +8,7 @@ namespace APIMAuthorizationsDemo.Function
     public class ReplyToNewGithubDiscussionTimeTrigger
     {
         [FunctionName("ReplyToNewGithubDiscussionTimeTrigger")]
-        public async Task Run([TimerTrigger("*/10 * * * * *")]TimerInfo myTimer, ILogger log)
+        public async Task Run([TimerTrigger("0 * * * * *")]TimerInfo myTimer, ILogger log)
         {
             log.LogInformation($"ReplyToNewGithubDiscussionTimeTrigger executed at: {DateTime.Now}");
             var job = new ReplyToNewGithubDiscussion();
