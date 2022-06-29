@@ -1,0 +1,13 @@
+{
+    "azureFunctions.deploySubpath": "samples/functions/replyToNewGithubDiscussion/bin/Release/net6.0/publish",
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.projectSubpath": "samples/functions/replyToNewGithubDiscussion",
+    "azureFunctions.preDeployTask": "publish (functions)",
+    "cSpell.words": [
+        "APIM",
+        "Newtonsoft",
+        "tokenstore"
+    ]
+}
