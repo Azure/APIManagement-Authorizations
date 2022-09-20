@@ -1,0 +1,71 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "Dropbox",
+		"description": "",
+		"version": "1.0"
+	},
+	"servers": [
+		{
+			"url": "https://api.dropboxapi.com/2/"
+		}
+	],
+	"paths": {
+		"/files/upload": {
+			"post": {
+				"summary": "Upload File",
+				"description": "https://www.dropbox.com/developers/documentation/http/documentation#files-upload",
+				"operationId": "upload-file",
+				"parameters": [
+					{
+						"name": "Content-Type",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"enum": [
+								"application/octet-stream"
+							],
+							"type": "string",
+							"default": "application/octet-stream"
+						}
+					},
+					{
+						"name": "Dropbox-API-Arg",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": null
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"securitySchemes": {
+			"apiKeyHeader": {
+				"type": "apiKey",
+				"name": "Ocp-Apim-Subscription-Key",
+				"in": "header"
+			},
+			"apiKeyQuery": {
+				"type": "apiKey",
+				"name": "subscription-key",
+				"in": "query"
+			}
+		}
+	},
+	"security": [
+		{
+			"apiKeyHeader": []
+		},
+		{
+			"apiKeyQuery": []
+		}
+	]
+}
